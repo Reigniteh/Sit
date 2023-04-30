@@ -11,6 +11,8 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerKickEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.spigotmc.event.entity.EntityDismountEvent;
 
 import java.util.ArrayList;
@@ -68,5 +70,20 @@ public class SitCommand implements CommandExecutor, Listener {
         }
 
     }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent e) {
+
+        sittingPlayers.remove(e.getPlayer());
+
+    }
+
+    @EventHandler
+    public void onPlayerKicked(PlayerKickEvent e) {
+
+        sittingPlayers.remove(e.getPlayer());
+
+    }
+
 
 }
