@@ -6,6 +6,8 @@ import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 
+import java.util.HashMap;
+
 public class ChairEntity {
 
     private ArmorStand chair;
@@ -17,6 +19,12 @@ public class ChairEntity {
         this.chair.setGravity(false);
         this.chair.setVisible(false);
         this.chair.setInvulnerable(false);
+
+    }
+
+    public void deSpawn() {
+
+        this.chair.remove();
 
     }
 
