@@ -59,6 +59,12 @@ public class SitCommand implements CommandExecutor, Listener {
             e.getDismounted().remove();
             sittingPlayers.remove(p);
 
+            Location loc = p.getLocation();
+            loc.add(0,1,0);
+
+            p.teleport(loc);
+
+
         }
 
     }
