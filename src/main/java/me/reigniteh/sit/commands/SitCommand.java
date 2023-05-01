@@ -1,5 +1,6 @@
 package me.reigniteh.sit.commands;
 
+import me.reigniteh.sit.Sit;
 import me.reigniteh.sit.entities.ChairEntity;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -59,6 +60,7 @@ public class SitCommand implements CommandExecutor, Listener {
         if(sittingPlayers.contains(p)) {
 
             e.getDismounted().remove();
+
             sittingPlayers.remove(p);
 
             Location loc = p.getLocation();
@@ -71,19 +73,6 @@ public class SitCommand implements CommandExecutor, Listener {
 
     }
 
-    @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent e) {
-
-        sittingPlayers.remove(e.getPlayer());
-
-    }
-
-    @EventHandler
-    public void onPlayerKicked(PlayerKickEvent e) {
-
-        sittingPlayers.remove(e.getPlayer());
-
-    }
 
 
 }

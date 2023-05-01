@@ -9,6 +9,9 @@ public final class Sit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        instance = this;
+
         this.getCommand("sit").setExecutor(new SitCommand());
         this.getServer().getPluginManager().registerEvents(new SitCommand(), this);
 
